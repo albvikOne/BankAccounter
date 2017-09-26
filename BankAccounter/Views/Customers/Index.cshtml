@@ -1,0 +1,92 @@
+﻿@model IEnumerable<BankAccounter.Models.Customer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+@using (Html.BeginForm())
+{
+    <p>
+        Title: @Html.TextBox("SearchString") <br />
+        <input type="submit" value="Filter" />
+    </p>
+}
+ 
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.customerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.customerSurname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.customerAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.customerPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.customerAccNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Account.accountType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Account.sum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bank.bankName)
+        </th>
+        <th>
+        @Html.DisplayNameFor(model => model.Bank.bankLocation)
+        </th>
+       
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.customerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.customerSurname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.customerAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.customerPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.customerAccNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Account.accountType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Account.sum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bank.bankName)
+        </td>
+        <th>
+            @Html.DisplayFor(modelItem => item.Bank.bankLocation)
+        </th>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.customerID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.customerID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.customerID })
+        </td>
+    </tr>
+}
+
+</table>

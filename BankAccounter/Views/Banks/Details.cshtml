@@ -1,0 +1,34 @@
+﻿@model BankAccounter.Models.Bank
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Bank</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.bankName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bankName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bankLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bankLocation)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.bankID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,82 @@
+﻿@model BankAccounter.Models.Customer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Customer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.customerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.customerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.customerSurname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.customerSurname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.customerAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.customerAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.customerPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.customerPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.customerAccNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.customerAccNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Account.accountType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Account.accountType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bank.bankName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bank.bankName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bank.bankLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bank.bankLocation)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.customerID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
